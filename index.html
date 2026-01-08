@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oasis Enterprises | Society Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #3b82f6;
+            --text: #f8fafc;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: var(--text);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tagline {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .service-tag {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            padding: 10px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .address-box {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 16px;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            border-left: 4px solid var(--accent);
+        }
+
+        .cta-button {
+            display: block;
+            text-align: center;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+            border-radius: 12px;
+            margin-top: 25px;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            background: #2563eb;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glass-card">
+        <h1>Oasis Enterprises</h1>
+        <p class="tagline">Premium Housing Society Management</p>
+
+        <div class="services-grid">
+            <div class="service-tag">📊 Accounting</div>
+            <div class="service-tag">🔍 Auditing</div>
+            <div class="service-tag">🏢 Overall Management</div>
+            <div class="service-tag">🤝 End-to-End Service</div>
+            <div class="service-tag">👤 Manager Provision</div>
+            <div class="service-tag">✨ & Much More</div>
+        </div>
+
+        <div class="address-box">
+            <strong>📍 Visit Us:</strong><br>
+            Shop No 20A, Haware Green Park Phase - 3 CHSL,<br>
+            Plot No. 15, Sector 22, Kamothe, Panvel,<br>
+            Navi Mumbai, Maharashtra 410209
+        </div>
+
+        <a href="mailto:contact@oasisenterprises.com" class="cta-button">Contact for Detailed Info</a>
+    </div>
+
+</body>
+</html>
