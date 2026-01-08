@@ -3,120 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oasis Enterprises | Society Management</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Oasis Enterprises | Professional Property Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #0f172a;
-            --accent: #3b82f6;
-            --text: #f8fafc;
+            --cbre-blue: #003F2D; /* Deep Professional Green/Blue */
+            --accent-blue: #006A4D;
+            --light-gray: #f9f9f9;
+            --text-dark: #1a1a1a;
+            --text-muted: #555555;
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: var(--text);
             margin: 0;
+            color: var(--text-dark);
+            background-color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* Navigation Style Header */
+        header {
+            padding: 20px 10%;
+            border-bottom: 1px solid #eee;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            min-height: 100vh;
-            padding: 20px;
         }
 
-        .glass-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 24px;
-            padding: 40px;
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--cbre-blue);
+            text-decoration: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 10%;
+            background-color: var(--light-gray);
+            border-bottom: 1px solid #eee;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin: 0;
+            color: var(--cbre-blue);
+            max-width: 800px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
             max-width: 600px;
-            width: 100%;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            margin-top: 20px;
         }
 
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(to right, #60a5fa, #a78bfa);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        /* Services Grid */
+        .section {
+            padding: 80px 10%;
         }
 
-        .tagline {
-            color: #94a3b8;
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
+        .section-title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-blue);
+            font-weight: 700;
+            margin-bottom: 40px;
+            display: block;
         }
 
-        .services-grid {
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .service-item {
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        .service-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .service-item p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        /* Contact Section */
+        .contact-footer {
+            background-color: var(--cbre-blue);
+            color: white;
+            padding: 60px 10%;
+        }
+
+        .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin: 25px 0;
+            gap: 50px;
         }
 
-        .service-tag {
-            background: rgba(59, 130, 246, 0.1);
-            border: 1px solid rgba(59, 130, 246, 0.2);
-            padding: 10px;
-            border-radius: 12px;
-            font-size: 0.9rem;
-            text-align: center;
+        .address-text {
+            font-size: 1rem;
+            opacity: 0.8;
         }
 
-        .address-box {
-            background: rgba(0, 0, 0, 0.2);
-            padding: 20px;
-            border-radius: 16px;
-            font-size: 0.85rem;
-            line-height: 1.6;
-            border-left: 4px solid var(--accent);
-        }
-
-        .cta-button {
-            display: block;
-            text-align: center;
-            background: var(--accent);
-            color: white;
+        .btn-white {
+            display: inline-block;
+            padding: 15px 35px;
+            background: white;
+            color: var(--cbre-blue);
             text-decoration: none;
-            padding: 15px;
-            border-radius: 12px;
-            margin-top: 25px;
-            font-weight: bold;
-            transition: transform 0.2s;
+            font-weight: 600;
+            border-radius: 4px;
+            margin-top: 20px;
+            transition: 0.3s;
         }
 
-        .cta-button:hover {
-            transform: translateY(-3px);
-            background: #2563eb;
+        .btn-white:hover {
+            background: #e0e0e0;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .contact-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <div class="glass-card">
-        <h1>Oasis Enterprises</h1>
-        <p class="tagline">Premium Housing Society Management</p>
+    <header>
+        <a href="#" class="logo">Oasis Enterprises</a>
+        <div style="font-size: 0.8rem; font-weight: 600;">PANVEL • NAVI MUMBAI</div>
+    </header>
 
-        <div class="services-grid">
-            <div class="service-tag">📊 Accounting</div>
-            <div class="service-tag">🔍 Auditing</div>
-            <div class="service-tag">🏢 Overall Management</div>
-            <div class="service-tag">🤝 End-to-End Service</div>
-            <div class="service-tag">👤 Manager Provision</div>
-            <div class="service-tag">✨ & Much More</div>
+    <section class="hero">
+        <h1>Exceptional management for evolving societies.</h1>
+        <p>Providing end-to-end accounting, auditing, and operational excellence for housing societies in Maharashtra.</p>
+    </section>
+
+    <section class="section">
+        <span class="section-title">Our Services</span>
+        <div class="grid">
+            <div class="service-item">
+                <h3>Accounting & Finance</h3>
+                <p>Precise maintenance billing, ledger management, and financial transparency.</p>
+            </div>
+            <div class="service-item">
+                <h3>Statutory Auditing</h3>
+                <p>Ensuring full compliance with co-operative society norms and government regulations.</p>
+            </div>
+            <div class="service-item">
+                <h3>Overall Management</h3>
+                <p>Complete day-to-day operations handling, including vendor and staff coordination.</p>
+            </div>
+            <div class="service-item">
+                <h3>Expert Staffing</h3>
+                <p>Providing trained on-site managers to handle society administrative tasks efficiently.</p>
+            </div>
         </div>
+    </section>
 
-        <div class="address-box">
-            <strong>📍 Visit Us:</strong><br>
-            Shop No 20A, Haware Green Park Phase - 3 CHSL,<br>
-            Plot No. 15, Sector 22, Kamothe, Panvel,<br>
-            Navi Mumbai, Maharashtra 410209
+    <section class="contact-footer">
+        <div class="contact-grid">
+            <div>
+                <h2>Ready to elevate your society?</h2>
+                <p class="address-text">
+                    Shop No 20A, Haware Green Park Phase - 3 CHSL,<br>
+                    Plot No. 15, Sector 22, Kamothe, Panvel,<br>
+                    Navi Mumbai 410209
+                </p>
+            </div>
+            <div style="text-align: right;">
+                <a href="https://wa.me/91XXXXXXXXXX?text=I%20am%20interested%20in%20Oasis%20Enterprises%20services" class="btn-white" target="_blank">
+                    💬 Message on WhatsApp
+                </a>
+                <p style="margin-top: 20px; font-size: 0.9rem;">Available for on-site consultation</p>
+            </div>
         </div>
-
-        <a href="mailto:contact@oasisenterprises.com" class="cta-button">Contact for Detailed Info</a>
-    </div>
+    </section>
 
 </body>
 </html>
