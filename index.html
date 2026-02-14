@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oasis Enterprises | Professional Property Management</title>
+    <title>Oasis Enterprises | Complete Housing Society Management</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --cbre-blue: #003F2D; /* Deep Professional Green/Blue */
+            --cbre-blue: #003F2D; /* Deep Professional Green */
             --accent-blue: #006A4D;
             --light-gray: #f9f9f9;
             --text-dark: #1a1a1a;
             --text-muted: #555555;
+            --border: #eeeeee;
         }
 
         body {
@@ -22,27 +23,44 @@
             line-height: 1.6;
         }
 
-        /* Navigation Style Header */
         header {
             padding: 20px 10%;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid var(--border);
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-container {
+            display: flex;
+            flex-direction: column;
         }
 
         .logo {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             color: var(--cbre-blue);
             text-decoration: none;
+            line-height: 1;
+        }
+
+        .logo-tagline {
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+            font-weight: 600;
+            color: var(--accent-blue);
+            margin-top: 5px;
         }
 
         /* Hero Section */
         .hero {
-            padding: 80px 10%;
+            padding: 100px 10%;
             background-color: var(--light-gray);
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid var(--border);
         }
 
         .hero h1 {
@@ -50,14 +68,15 @@
             font-size: 3.5rem;
             margin: 0;
             color: var(--cbre-blue);
-            max-width: 800px;
+            max-width: 900px;
+            line-height: 1.1;
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             color: var(--text-muted);
-            max-width: 600px;
-            margin-top: 20px;
+            max-width: 700px;
+            margin-top: 25px;
         }
 
         /* Services Grid */
@@ -71,101 +90,188 @@
             letter-spacing: 2px;
             color: var(--accent-blue);
             font-weight: 700;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
             display: block;
         }
 
-        .grid {
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 60px 40px;
         }
 
-        .service-item {
-            border-top: 1px solid #eee;
-            padding-top: 20px;
+        .service-card h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--cbre-blue);
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--accent-blue);
+            display: inline-block;
+            padding-bottom: 5px;
         }
 
-        .service-item h3 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
+        .service-card p {
+            color: var(--text-dark);
+            font-weight: 500;
+            margin-bottom: 20px;
         }
 
-        .service-item p {
+        .service-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .service-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
             font-size: 0.95rem;
             color: var(--text-muted);
+            display: flex;
+            align-items: center;
+        }
+
+        .service-list li::before {
+            content: "→";
+            margin-right: 10px;
+            color: var(--accent-blue);
+            font-weight: bold;
         }
 
         /* Contact Section */
         .contact-footer {
             background-color: var(--cbre-blue);
             color: white;
-            padding: 60px 10%;
+            padding: 80px 10%;
         }
 
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 50px;
+            align-items: center;
         }
 
         .address-text {
-            font-size: 1rem;
-            opacity: 0.8;
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-top: 20px;
         }
 
         .btn-white {
             display: inline-block;
-            padding: 15px 35px;
+            padding: 18px 40px;
             background: white;
             color: var(--cbre-blue);
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             border-radius: 4px;
-            margin-top: 20px;
             transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .btn-white:hover {
             background: #e0e0e0;
+            transform: translateY(-2px);
         }
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
-            .contact-grid { grid-template-columns: 1fr; }
+            .services-grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; text-align: center; }
+            header { flex-direction: column; gap: 15px; text-align: center; }
+            .service-card h2 { font-size: 1.5rem; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="#" class="logo">Oasis Enterprises</a>
-        <div style="font-size: 0.8rem; font-weight: 600;">PANVEL • NAVI MUMBAI</div>
+        <div class="logo-container">
+            <a href="#" class="logo">Oasis Enterprises</a>
+            <span class="logo-tagline">COMPLETE HOUSING SOCIETY SOLUTIONS</span>
+        </div>
+        <div style="font-size: 0.8rem; font-weight: 700; letter-spacing: 1px;">PANVEL • NAVI MUMBAI</div>
     </header>
 
     <section class="hero">
-        <h1>Exceptional management for evolving societies.</h1>
-        <p>Providing end-to-end accounting, auditing, and operational excellence for housing societies in Maharashtra.</p>
+        <h1>Complete Housing Society Management Solutions.</h1>
+        <p>Expert accounting, statutory compliance, and administrative excellence designed for evolving residential communities in Maharashtra.</p>
     </section>
 
     <section class="section">
-        <span class="section-title">Our Services</span>
-        <div class="grid">
-            <div class="service-item">
-                <h3>Accounting & Finance</h3>
-                <p>Precise maintenance billing, ledger management, and financial transparency.</p>
+        <span class="section-title">Our Expertise</span>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <h2>01. Financial Management</h2>
+                <p>Ensuring transparency, accuracy, and statutory compliance.</p>
+                <ul class="service-list">
+                    <li>Maintenance of Member Registers</li>
+                    <li>Cash Book & Bank Book Management</li>
+                    <li>General & Personal Ledger Maintenance</li>
+                    <li>Monthly Income & Expenditure Statements</li>
+                    <li>Preparation of Annual Balance Sheet</li>
+                    <li>Bank Reconciliation & Petty Cash</li>
+                </ul>
             </div>
-            <div class="service-item">
-                <h3>Statutory Auditing</h3>
-                <p>Ensuring full compliance with co-operative society norms and government regulations.</p>
+
+            <div class="service-card">
+                <h2>02. Billing & Collections</h2>
+                <p>Streamlined processes for consistent cash flow.</p>
+                <ul class="service-list">
+                    <li>Monthly Maintenance Bill Generation</li>
+                    <li>Collection Tracking & Reporting</li>
+                    <li>Payment Receipts (Email / Manual)</li>
+                    <li>Outstanding Payment Follow-ups</li>
+                    <li>Cheque Collection & Bank Deposits</li>
+                </ul>
             </div>
-            <div class="service-item">
-                <h3>Overall Management</h3>
-                <p>Complete day-to-day operations handling, including vendor and staff coordination.</p>
+
+            <div class="service-card">
+                <h2>03. Statutory Support</h2>
+                <p>Full adherence to government regulations and bye-laws.</p>
+                <ul class="service-list">
+                    <li>Preparation of Records for Audit</li>
+                    <li>Coordination with Statutory Auditors</li>
+                    <li>Documentation as per Society Bye-Laws</li>
+                    <li>Filing of Mandatory Statements</li>
+                    <li>Regulatory Compliance Support</li>
+                </ul>
             </div>
-            <div class="service-item">
-                <h3>Expert Staffing</h3>
-                <p>Providing trained on-site managers to handle society administrative tasks efficiently.</p>
+
+            <div class="service-card">
+                <h2>04. AGM & Admin Support</h2>
+                <p>Professional handling of society meetings and records.</p>
+                <ul class="service-list">
+                    <li>Attending AGM / MGM Meetings</li>
+                    <li>Preparing Minutes of Meetings (MoM)</li>
+                    <li>Drafting Official Notices</li>
+                    <li>Documentation & Record Management</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <h2>05. Legal & Advisory</h2>
+                <p>Practical guidance for smooth society operations.</p>
+                <ul class="service-list">
+                    <li>Consultation on Society Matters</li>
+                    <li>Assistance with Legal Notices</li>
+                    <li>Advisory on Financial Decisions</li>
+                    <li>Guidance under Society Acts</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <h2>06. Taxation & TDS</h2>
+                <p>Managing government tax liabilities with precision.</p>
+                <ul class="service-list">
+                    <li>Preparation of TDS Challans</li>
+                    <li>TDS Certificate Issuance</li>
+                    <li>Filing of Income Tax Returns</li>
+                    <li>Compliance with Tax Rules</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -173,8 +279,10 @@
     <section class="contact-footer">
         <div class="contact-grid">
             <div>
-                <h2>Ready to elevate your society?</h2>
+                <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 10px;">Ready to elevate your society?</h2>
+                <p style="opacity: 0.8; margin-bottom: 30px;">Professional management starts with a conversation.</p>
                 <p class="address-text">
+                    <strong>Registered Office:</strong><br>
                     Shop No 20A, Haware Green Park Phase - 3 CHSL,<br>
                     Plot No. 15, Sector 22, Kamothe, Panvel,<br>
                     Navi Mumbai 410209
@@ -182,9 +290,11 @@
             </div>
             <div style="text-align: right;">
                 <a href="https://wa.me/919324554690?text=I%20am%20interested%20in%20Oasis%20Enterprises%20services" class="btn-white" target="_blank">
-                    💬 Message on WhatsApp
+                    💬 WhatsApp Consultation
                 </a>
-                <p style="margin-top: 20px; font-size: 0.9rem;">Available for on-site consultation</p>
+                <p style="margin-top: 25px; font-size: 0.95rem; opacity: 0.9;">
+                    Available for on-site consultation across Navi Mumbai
+                </p>
             </div>
         </div>
     </section>
